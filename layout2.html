@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Assignment 4 - Layout1</title>
+    <title>Assignment 4 - Layout2</title>
     <style>
         .wrapper{
             font-family: sans-serif;
@@ -12,22 +12,22 @@
             margin:20px auto 0 auto;
             display: grid;    
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 70px 300px 150px 50px;
+            grid-template-rows: 70px 200px auto 50px;
             grid-gap: 15px;
             grid-template-areas:
                 "logo . nav nav"
-                "img img img img"
-                "prod1 prod1 prod2 prod2"
+                "txt txt txt txt"
+                "cont cont cont cont"
                 "foot foot foot foot"
         }
-        .wrapper div:not(.navItems){
+        .wrapper div:not(.mainCon, .navItems, .header){
             background-color: silver;
         }
         .logo       {grid-area:logo}
         .navItems   {grid-area:nav; align-self: center;}
         .navItems ul {
 			display: grid;
-			height: 50px;
+            height: 50px;
 			grid-template: auto / repeat(4, 1fr);
 			grid-gap: 15px;
 			justify-items: center;
@@ -36,9 +36,13 @@
             background-color: silver;
             padding:0px;
 		}
-        .prodImg    {grid-area:img}
-        .prod1      {grid-area:prod1}
-        .prod2      {grid-area:prod2}
+        .header     {grid-area:txt}
+        .mainCon{
+            grid-area:cont;
+            display: grid;
+			grid-gap: 10px;
+			grid-template: repeat(3, 170px) / repeat(3, 1fr);
+        }
         .footer     {grid-area:foot; text-align:center; align-content: center;}
     </style>
 </head>
@@ -53,9 +57,15 @@
                 <li>Item 4</li>
             </ul>
         </div>
-        <div class="prodImg">Featured Product Image</div>
-        <div class="prod1">Product 1</div>
-        <div class="prod2">Product 2</div>
+        <div class="header">
+            <h1>Lorem ipsum dolor sit amet, ne saepe phaedrum cotidieque has, natum zril pro ei.</h1>
+            <h3>Cu vel aliquid lobortis deseruisse. Nam at adipisci dignissim forensibus. Qui an recteque maluisset assentior, cu ferri aperiam imperdiet sed.</h3>
+        </div>
+        <div class="mainCon">
+            <div></div> <div></div> <div></div>
+            <div></div> <div></div> <div></div>
+            <div></div> <div></div> <div></div>
+        </div>
         <div class="footer">
             <p>Copyright Notice</p>
         </div>
