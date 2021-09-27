@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 4 of CS648</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .wrapper{
+            font-family: sans-serif;
+            width: 960px;
+            margin:20px auto 0 auto;
+            display: grid;    
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 70px 300px 150px 50px;
+            grid-gap: 15px;
+            grid-template-areas:
+                "logo . nav nav"
+                "img img img img"
+                "prod1 prod1 prod2 prod2"
+                "foot foot foot foot"
+        }
+        .wrapper div:not(.blank, .navItems){
+            background-color: silver;
+        }
+        .logo       {grid-area:logo}
+        .navItems   {grid-area:nav; align-self: center;}
+        .navItems ul {
+			display: grid;
+			height: 50px;
+			grid-template: auto / repeat(4, 1fr);
+			grid-gap: 20px;
+			justify-items: center;
+			align-content: center;
+            list-style-type: none;
+            background-color: silver;
+            padding:0px;
+		}
+        .prodImg    {grid-area:img}
+        .prod1      {grid-area:prod1}
+        .prod2      {grid-area:prod2}
+        .footer     {grid-area:foot; text-align:center; align-content: center;}
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="logo">Company Logo</div>
+        <div class="navItems">
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+                <li>Item 4</li>
+            </ul>
+        </div>
+        <div class="prodImg">Featured Product Image</div>
+        <div class="prod1">Product 1</div>
+        <div class="prod2">Product 2</div>
+        <div class="footer">
+            <p>Copyright Notice</p>
+        </div>
+      </div>
+</body>
+</html>
